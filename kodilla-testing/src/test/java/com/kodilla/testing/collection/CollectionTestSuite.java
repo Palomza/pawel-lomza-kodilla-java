@@ -43,10 +43,8 @@ class CollectionTestSuite {
     void testOddNumbersExterminatorNormalList(){
         //Given
         OddNumbersExterminator normalList = new OddNumbersExterminator();
-        Integer oddsAndEvens[] = new Integer[] {5, 14, 2, 41, 8};
-        Integer evens[] = new Integer[] {14, 2, 8};
-        List<Integer> list = Arrays.asList(oddsAndEvens);
-        List<Integer> expectedList = Arrays.asList(evens);
+        List<Integer> list = new ArrayList<>(List.of(14, 2, 41, 8));
+        List<Integer> expectedList = new ArrayList<>(List.of(14, 2, 8));
         //When
         List<Integer> result = normalList.exterminate(list);
         System.out.println("Testing "+ result);
