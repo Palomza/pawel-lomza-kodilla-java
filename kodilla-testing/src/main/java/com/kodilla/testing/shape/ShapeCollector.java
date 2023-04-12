@@ -23,6 +23,8 @@ public class ShapeCollector {
         return shapes.get(n);
     }
 
+
+
     public String getShapes(){
         String shapesString = "";
         for(Shape x : shapes) {
