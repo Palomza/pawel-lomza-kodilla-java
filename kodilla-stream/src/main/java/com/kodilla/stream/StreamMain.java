@@ -1,10 +1,10 @@
 package com.kodilla.stream;
 
+import com.kodilla.stream.beautifier.PoemBeautifier;
 import com.kodilla.stream.lambda.Executor;
 import com.kodilla.stream.lambda.ExpressionExecutor;
 import com.kodilla.stream.lambda.Processor;
 import com.kodilla.stream.reference.FunctionalCalculator;
-
 public class StreamMain {
     public static void main(String[] args) {
         Processor processor = new Processor();
@@ -25,5 +25,13 @@ public class StreamMain {
         expressionExecutor.executeExpression(3, 4, FunctionalCalculator::addAToB);
         expressionExecutor.executeExpression(3, 4, FunctionalCalculator::subBFromA);
         expressionExecutor.executeExpression(3, 4, FunctionalCalculator::divideAByB);
+
+        //Start of Task 7.1
+        PoemBeautifier poemBeautifier = new PoemBeautifier();
+        poemBeautifier.beautify("This text is a test.", (string) -> "ABC " +string+ " ABC");
+        poemBeautifier.beautify("This text is a test.", (string) -> string.toUpperCase());
+        poemBeautifier.beautify("This text is a test.", (string) -> string.toLowerCase());
+        poemBeautifier.beautify("This text is a test.", (string) -> string.replace('t', 'p'));
+
     }
 }
