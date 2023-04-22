@@ -16,22 +16,22 @@ public class FlightRunner {
         flightMap.put("GDN", false);
     }
 
-    public void findFlight(Flight flight) throws RouteNotFoundException{
+    public boolean findFlight(Flight flight) throws RouteNotFoundException{
         String departureAirport = flight.getDepartureAirport();
         String arrivalAirport = flight.getArrivalAirport();
 
         if(!flightMap.containsKey(departureAirport) || !flightMap.containsKey(arrivalAirport)){
-            throw new RouteNotFoundException("Can't make that flight, one or both airports not found.");
+            return false;
         }
 
         boolean isArrivalAvailable = flightMap.get(arrivalAirport);
         boolean isDepartureAvailable = flightMap.get(departureAirport);
 
         if(!isArrivalAvailable || !isDepartureAvailable){
-            throw new RouteNotFoundException("Can't make that flight, one or both airports are not operational.");
+            return false;
         }
 
-        System.out.println("Flight: " + departureAirport + " - " + arrivalAirport + " is available.");
+        return true;
     }
 
     public static void main(String[] args) {
