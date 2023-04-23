@@ -21,7 +21,7 @@ public class FlightRunner {
         String arrivalAirport = flight.getArrivalAirport();
 
         if(!flightMap.containsKey(departureAirport) || !flightMap.containsKey(arrivalAirport)){
-            return false;
+            throw new RouteNotFoundException("Can't find that flight, one or both airports not found.");
         }
 
         boolean isArrivalAvailable = flightMap.get(arrivalAirport);
