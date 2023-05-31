@@ -22,4 +22,5 @@ class ForumUserTestSuite {
         //Then
         Assertions.assertEquals("John Smith", username);
     }
+
 }
