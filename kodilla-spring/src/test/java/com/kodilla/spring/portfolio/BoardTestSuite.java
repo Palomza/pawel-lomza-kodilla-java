@@ -10,7 +10,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 class BoardTestSuite {
 
     @Test
-    void testTaskAdd() {
+    void testTaskAddToDoList() {
         //Given
         ApplicationContext context =
                 new AnnotationConfigApplicationContext(BoardConfig.class);
@@ -18,12 +18,38 @@ class BoardTestSuite {
 
         //When
         board.getToDoList().addTask("Task example 1");
-        board.getInProgressList().addTask("Task example 2");
-        board.getDoneList().addTask("Task example 3");
 
         //Then
         Assertions.assertEquals("Task example 1", board.getToDoList().getTasks().get(0));
+
+    }
+
+    @Test
+    void testTaskAddInProgressList() {
+        //Given
+        ApplicationContext context =
+                new AnnotationConfigApplicationContext(BoardConfig.class);
+        Board board = context.getBean(Board.class);
+
+        //When
+        board.getInProgressList().addTask("Task example 2");
+
+        //Then
         Assertions.assertEquals("Task example 2", board.getInProgressList().getTasks().get(0));
+
+    }
+
+    @Test
+    void testTaskAddDoneList() {
+        //Given
+        ApplicationContext context =
+                new AnnotationConfigApplicationContext(BoardConfig.class);
+        Board board = context.getBean(Board.class);
+
+        //When
+        board.getDoneList().addTask("Task example 3");
+
+        //Then
         Assertions.assertEquals("Task example 3", board.getDoneList().getTasks().get(0));
 
     }
