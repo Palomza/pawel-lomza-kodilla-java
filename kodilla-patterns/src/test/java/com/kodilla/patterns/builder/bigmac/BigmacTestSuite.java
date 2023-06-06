@@ -5,8 +5,6 @@ import org.junit.jupiter.api.Test;
 
 class BigmacTestSuite {
 
-    private Class<? extends Throwable> IllegalArgumentException;
-
     @Test
     void testBigmacNew(){
         //Given

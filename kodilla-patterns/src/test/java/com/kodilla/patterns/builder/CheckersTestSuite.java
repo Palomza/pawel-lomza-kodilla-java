@@ -1,5 +1,6 @@
-package com.kodilla.patterns.builder.checkers;
+package com.kodilla.patterns.builder;
 
+import com.kodilla.patterns.builder.checkers.*;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
