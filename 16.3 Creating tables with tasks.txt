@@ -52,3 +52,5 @@ INSERT INTO ISSUES (ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
 VALUES (3, 'Summary of task eight', 'Description of task eight', 3);
 
 SELECT * FROM ISSUES;
+
+COMMIT;
