@@ -1,0 +1,15 @@
+{
+	"brand": "Opel",
+	"model": "Vectra",
+	"seats": {
+		"frontRow":[
+			"leather",
+			"black"
+		],
+		"backRow":[
+			"leather",
+			"black"
+		]
+	},
+	"engineSize": 2000
+}
