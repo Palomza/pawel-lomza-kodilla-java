@@ -11,6 +11,10 @@ import java.util.List;
         query = "SELECT * FROM COMPANIES WHERE LEFT(COMPANY_NAME, 3) = LEFT(:NAME, 3)",
         resultClass = Company.class
 )
+@NamedQuery(
+        name = "Company.findByPartOfName",
+        query = "from Company WHERE name like :NAME_PART"
+)
 @Entity
 @Table(name = "COMPANIES")
 public class Company {
